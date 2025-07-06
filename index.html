@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LISP to C Compiler</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light">
+  <div class="container">
+    <div class="header">
+      <h1>LISP to C Compiler</h1>
+      <button id="themeToggle">🌙 Dark Mode</button>
+    </div>
+
+    <label for="lispInput">Enter LISP Code:</label>
+    <textarea id="lispInput">(+ 1 (* 2 (+ 3 (* 4 (+ 5 6)))))</textarea>
+
+    <label for="stepSelect">Choose Step:</label>
+    <select id="stepSelect">
+      <option value="all">All Steps</option>
+      <option value="tokenizer">Tokenizer Only</option>
+      <option value="parser">Parser Only</option>
+      <option value="transformer">Transformer Only</option>
+      <option value="generator">C Code Generator Only</option>
+    </select>
+
+    <button onclick="runStep()">Run</button>
+
+    <div class="outputs">
+      <div>
+        <h3>Tokens</h3>
+        <pre id="tokensOutput" class="output-box"></pre>
+      </div>
+      <div>
+        <h3>Abstract Syntax Tree (AST)</h3>
+        <pre id="astOutput" class="output-box"></pre>
+      </div>
+      <div>
+        <h3>Transformed AST</h3>
+        <pre id="transformedAstOutput" class="output-box"></pre>
+      </div>
+      <div>
+        <h3>Generated C Code</h3>
+        <pre id="cOutput" class="output-box"></pre>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
